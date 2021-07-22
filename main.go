@@ -59,6 +59,22 @@ type employee struct {
 
 func main() {
 	fmt.Println("This is Design Pattern!")
+
+	msg := "Enter the language:"
+	var name string
+
+	for {
+		fmt.Printf("%s \033[34m", msg)
+		fmt.Scanln(&name)
+		fmt.Printf("\033[0m")
+		if name != "Go" {
+			fmt.Print("\033[K")
+			fmt.Print("\033[A\033[K")
+		} else {
+			fmt.Println("\033[34mNOICE")
+			break
+		}
+	}
 }
 
 type myType struct {
@@ -86,4 +102,17 @@ func (m *myType) get() *myType {
 type iface interface {
 	hi() string
 	get() *myType
+}
+
+type Inner struct {
+	name string
+}
+
+func (i *Inner) show() {
+	fmt.Println(i.name)
+}
+
+type Outer struct {
+	id int
+	*Inner
 }

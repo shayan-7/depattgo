@@ -27,5 +27,5 @@ func TestIterator(t *testing.T) {
 			max += u.Grade
 		}
 	}
-	assert.Equal(t, 2, max)
+	assert.Equal(t, 3, max)
 }

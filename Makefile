@@ -8,3 +8,6 @@ test_creational:
 
 test_structural:
 	@go test ./structural $(options)
+
+test_behavioral:
+	@go test ./behavioral $(options)
